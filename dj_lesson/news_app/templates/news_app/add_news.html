@@ -1,0 +1,32 @@
+{% extends 'main_app/layout.html' %}
+
+{% block title %}
+    <title>Опубликовать новость</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <br>
+        <h3 style="margin: 20px;">Форма для публикации новостей</h3>
+        <br>
+        <form method="post" class="p-4 border rounded shadow-sm bg-light">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.title }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.short_description }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.content }}
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Опубликовать</button>
+        </form>
+        <p>{{ errors }}</p>
+
+    </div>
+
+{% endblock %}
