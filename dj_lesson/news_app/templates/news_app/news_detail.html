@@ -1,0 +1,15 @@
+{% extends 'main_app/layout.html' %}
+
+{% block title %}
+    <title>{{ news.title }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h1>{{ news.title }}</h1>
+    <p>{{ news.content|linebreaks }}</p>  # linebreaks - это фильтр, который добавляет переносы строк
+
+    <a href="{% url 'news_home' %}" class="btn btn-secondary">Назад</a>
+</div>
+
+{% endblock %}
